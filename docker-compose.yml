@@ -1,0 +1,13 @@
+version: "3"
+services:
+  sailpoint:
+    container_name: api
+    build:
+      context: $PWD
+      dockerfile: Dockerfile
+    tty: true
+    logging:
+      driver: "json-file"
+      options:
+          max-size: "100m"
+    restart: always
